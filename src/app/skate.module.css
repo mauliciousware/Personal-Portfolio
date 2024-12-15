@@ -1,6 +1,6 @@
 
   .scene {
-    
+    top: 5vmin; /* Adjust this value as needed */
     --border-size: 0.5vmin;
     --border-style: solid;
     --color-bolt: hsl(0deg 0% 40%);
@@ -13,7 +13,7 @@
     place-items: center;
     position: relative;
     user-select: none;
-    font-size: 5vmin;
+    font-size: 3.5vmin;
     transform-style: preserve-3d;
     transition: transform 600ms cubic-bezier(0.25, 1, 0.5, 1);
     transform: rotateX(calc(var(--y) * -1deg)) rotateZ(calc(var(--x) / 2 * 1deg));
@@ -26,7 +26,7 @@
     align-items: center;
     justify-content: space-between;
     padding: var(--padding) calc(var(--padding) * 2);
-    min-inline-size: 50vmin;
+    min-inline-size: 39vmin;
     font-weight: bold;
     color: var(--color-text);
     background: var(--color-deck);
@@ -45,7 +45,7 @@
   }
   
   .wheel {
-    --position: calc(var(--padding) * 2 - 0.15em);
+    --position: calc(var(--padding) * 1.5 - 0.15em);
     position: absolute;
     width: 0.8em;
     aspect-ratio: 1;
@@ -90,7 +90,7 @@
   }
   
   .truck {
-    --offset: 0.1em;
+    --offset: 0.08em;
     position: absolute;
     top: 50%;
     width: 0.25em;
@@ -134,7 +134,7 @@
     left: -1em;
     margin: auto;
     width: 2em;
-    font-size: 0.5em;
+    font-size: 0.4em;
     color: var(--color-text);
     transform: rotateX(180deg);
     text-transform: uppercase;
@@ -147,7 +147,7 @@
     inset: 0;
     left: -1.25vmin;
     margin: auto;
-    width: 8.6vmin;
+    width: 7vmin;
     aspect-ratio: 1;
     border: var(--border-size) var(--border-style) var(--color-text);
   }
