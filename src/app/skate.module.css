@@ -1,0 +1,161 @@
+
+  .scene {
+    
+    --border-size: 0.5vmin;
+    --border-style: solid;
+    --color-bolt: hsl(0deg 0% 40%);
+    --color-border: hsl(0 0% 8%);
+    --color-deck: hsl(10deg 10% 12%);
+    --color-deck-trim: hsl(0deg 20% 90%);
+    --color-text: hsl(0deg 0% 96%);
+    --color-truck: hsl(0deg 0% 30%);
+    --color-wheel: hsl(0deg 20% 80%);
+    place-items: center;
+    position: relative;
+    user-select: none;
+    font-size: 5vmin;
+    transform-style: preserve-3d;
+    transition: transform 600ms cubic-bezier(0.25, 1, 0.5, 1);
+    transform: rotateX(calc(var(--y) * -1deg)) rotateZ(calc(var(--x) / 2 * 1deg));
+  }
+  .board {
+    --padding: 1em;
+    position: relative;
+    display: flex;
+    gap: 0.75rem;
+    align-items: center;
+    justify-content: space-between;
+    padding: var(--padding) calc(var(--padding) * 2);
+    min-inline-size: 50vmin;
+    font-weight: bold;
+    color: var(--color-text);
+    background: var(--color-deck);
+    border-radius: 360px;
+    border: var(--border-size) var(--border-style) var(--color-border);
+    box-shadow: 0 0 0 var(--border-size) var(--color-deck-trim) inset;
+    transform-style: preserve-3d;
+  }
+  
+  .board::before,
+  .board::after {
+    content: "::";
+    position: relative;
+    top: -0.085em;
+    color: var(--color-bolt);
+  }
+  
+  .wheel {
+    --position: calc(var(--padding) * 2 - 0.15em);
+    position: absolute;
+    width: 0.8em;
+    aspect-ratio: 1;
+    background: var(--color-wheel);
+    border: inherit;
+    border-radius: 50%;
+    transform-origin: center;
+    transform: rotateX(-90deg) translateY(55%);
+    box-shadow: 0.3vmin -0.5vmin 0 hsl(0 0% 0% / 0.2) inset;
+  }
+  
+  .wheel::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    margin: auto;
+    width: 15%;
+    aspect-ratio: 1;
+    border: inherit;
+    background: var(--color-deck);
+    border-radius: inherit;
+  }
+  
+  .wheel:nth-of-type(1) {
+    top: 0;
+    left: var(--position);
+  }
+  
+  .wheel:nth-of-type(2) {
+    top: 0;
+    right: var(--position);
+  }
+  
+  .wheel:nth-of-type(3) {
+    bottom: 0;
+    left: var(--position);
+  }
+  
+  .wheel:nth-of-type(4) {
+    bottom: 0;
+    right: var(--position);
+  }
+  
+  .truck {
+    --offset: 0.1em;
+    position: absolute;
+    top: 50%;
+    width: 0.25em;
+    height: 70%;
+    background: var(--color-truck);
+    border-inline: calc(var(--border-size) / 2) var(--border-style)
+      var(--color-border);
+    box-shadow: -0.3vmin 0 0 hsl(0 0% 0% / 0.2) inset;
+    transform: translateY(-50%) rotateY(90deg) translateX(175%);
+  }
+  
+  .truck::after {
+    content: "";
+    position: absolute;
+    top: 50%;
+    right: 0;
+    width: 100%;
+    height: 15%;
+    margin-inline: auto;
+    border-inline: inherit;
+    background-color: inherit;
+    box-shadow: -0.4vmin 0 0 hsl(0 0% 0% / 0.2) inset;
+    transform: translateY(-50%) rotate(-90deg) translateY(-64%);
+  }
+  
+  .truck:nth-last-child(1) {
+    position: absolute;
+    left: calc(var(--padding) * 2 + var(--offset));
+  }
+  
+  .truck:nth-last-child(2) {
+    position: absolute;
+    right: calc(var(--padding) * 2 + var(--offset));
+  }
+  
+  .logo {
+    display: flex;
+    align-items: center;
+    position: absolute;
+    inset: 0;
+    left: -1em;
+    margin: auto;
+    width: 2em;
+    font-size: 0.5em;
+    color: var(--color-text);
+    transform: rotateX(180deg);
+    text-transform: uppercase;
+    backface-visibility: hidden;
+  }
+  
+  .logo::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    left: -1.25vmin;
+    margin: auto;
+    width: 8.6vmin;
+    aspect-ratio: 1;
+    border: var(--border-size) var(--border-style) var(--color-text);
+  }
+  
+  .logo::after {
+    position: absolute;
+    font-size: 1.75em;
+    font-weight: normal;
+    transform: translateY(-50%);
+  }
+  

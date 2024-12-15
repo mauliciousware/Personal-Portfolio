@@ -1,4 +1,7 @@
+"use client";
+
 import { HackathonCard } from "@/components/hackathon-card";
+import { useEffect } from 'react';
 import BlurFade from "@/components/magicui/blur-fade";
 import BlurFadeText from "@/components/magicui/blur-fade-text";
 import { ProjectCard } from "@/components/project-card";
@@ -8,10 +11,42 @@ import { Badge } from "@/components/ui/badge";
 import { DATA } from "@/data/resume";
 import Link from "next/link";
 import Markdown from "react-markdown";
+import gsap from "gsap";
+import { Observer } from "gsap/Observer";
+import styles from "@/app/skate.module.css"; // Adjust path as needed
+
+
 
 const BLUR_FADE_DELAY = 0.04;
 
-export default function Page() {
+function Page() {
+  useEffect(() => {
+    // Ensure the DOM is ready and the browser environment is present
+    if (typeof window !== 'undefined') {
+      const root = document.documentElement;
+      gsap.registerPlugin(Observer);
+
+      // Skateboard animation logic using GSAP Observer
+      Observer.create({
+        preventDefault: true,
+        onChangeX({ isDragging, deltaX }) {
+          if (!isDragging) return;
+          const x = root.style.getPropertyValue('--x') || '0';
+          root.style.setProperty('--x', (parseInt(x, 10) - deltaX).toString());
+        },
+        onChangeY({ isDragging, deltaY }) {
+          if (!isDragging) return;
+          const y = root.style.getPropertyValue('--y') || '0';
+          root.style.setProperty('--y', (parseInt(y, 10) + deltaY).toString());
+        },
+      });
+
+      // Initial positioning for animation
+      root.style.setProperty('--x', '0');
+      root.style.setProperty('--y', '0');
+    }
+  }, []);
+
   return (
     <main className="flex flex-col min-h-[100dvh] space-y-10">
       <section id="hero">
@@ -30,14 +65,21 @@ export default function Page() {
                 text={DATA.description}
               />
             </div>
-            <BlurFade delay={BLUR_FADE_DELAY}>
-              <Avatar className="size-28 border">
-                <AvatarImage alt={DATA.name} src={DATA.avatarUrl} />
-                <AvatarFallback>{DATA.initials}</AvatarFallback>
-              </Avatar>
+            <BlurFade>
+            <section id="skateboard" className={styles.scene}>
+              <div className={styles.board}>
+                <span className={styles.logo}>CSS<br />is<br />awesome</span>
+                <div className={styles.wheel}></div>
+                <div className={styles.wheel}></div>
+                <div className={styles.wheel}></div>
+                <div className={styles.wheel}></div>
+                <div className={styles.truck}></div>
+                <div className={styles.truck}></div>
+              </div>
+            </section>
             </BlurFade>
-          </div>
-        </div>
+                </div>
+              </div>
       </section>
       <section id="about">
         <BlurFade delay={BLUR_FADE_DELAY * 3}>
@@ -223,3 +265,5 @@ export default function Page() {
     </main>
   );
 }
+
+export default Page
