@@ -18,6 +18,8 @@ import styles from "@/app/skate.module.css"; // Adjust path as needed
 
 
 const BLUR_FADE_DELAY = 0.04;
+const BLUR_FADE_MOREDELAY = 0.7;
+
 
 function Page() {
   useEffect(() => {
@@ -65,7 +67,7 @@ function Page() {
                 text={DATA.description}
               />
             </div>
-            <BlurFade>
+            <BlurFade delay={BLUR_FADE_MOREDELAY}>
             <section id="skateboard" className={styles.scene}>
               <div className={styles.board}>
                 <span className={styles.logo}>CSS<br />is<br />awesome</span>
