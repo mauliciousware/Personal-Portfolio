@@ -28,7 +28,7 @@ function Page() {
 
       // Skateboard animation logic using GSAP Observer
       Observer.create({
-        preventDefault: true,
+        preventDefault: false,
         onChangeX({ isDragging, deltaX }) {
           if (!isDragging) return;
           const x = root.style.getPropertyValue('--x') || '0';

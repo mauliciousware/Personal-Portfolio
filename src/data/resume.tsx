@@ -73,7 +73,7 @@ export const DATA = {
   work: [
     {
       company: "Infosys",
-      href: "https://atomic.finance",
+      href: "https://infosys.com",
       badges: [],
       location: "Bengaluru, India",
       title: "Software Development Engineer",
