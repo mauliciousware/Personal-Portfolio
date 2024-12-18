@@ -8,9 +8,9 @@ export const DATA = {
   location: "Binghamton, NY",
   locationLink: "https://maps.app.goo.gl/xFh2P25Ww8NRG3fB9",
   description:
-    "Software Development Engineer: I debug the world, one line at a time.",
+    "Software Development Engineer",
   summary:
-    "I'm an international-level jump rope athlete and a Master's student in Computer Science at SUNY Binghamton, set to yeet my cap in May 2026. I run a [YouTube channel](https://www.youtube.com/@shreemauliraut4524) for coding and gaming, engage in hackathons, and at [Infosys](https://www.infosys.com/), I have solid experience working with a 'big' tech client (let's just say they're fruit-based). At [Wolfx](https://wolfx.io/), a startup where I navigated through chaos like it's just another Tuesday.",
+    "I'm an international-level jump rope athlete and a Master's student in Computer Science at SUNY Binghamton, set to yeet my cap in May 2026. I run a [YouTube channel](https://www.youtube.com/@shreemauliraut4524) for coding and gaming, engage in hackathons, and at [Infosys](https://www.infosys.com/), I have solid experience working with a 'big' tech client (let's just say they're fruit-based). At [Wolfx](https://wolfx.io/), a startup where I navigated through chaos like it's just another Tuesday. When I'm not building software or practicing jump rope, you'll find me cruising with the [Bing Skate Club](https://careertools.binghamton.edu/organizations/binghamton-skate-club/).",
   avatarUrl: "/me.jpg",
   skills: [
     "React",
@@ -27,7 +27,6 @@ export const DATA = {
   ],
   navbar: [
     { href: "/", icon: HomeIcon, label: "Home" },
-    { href: "/blog", icon: NotebookIcon, label: "Blog" },
   ],
   contact: {
     email: "sraut2@binghamton.edu",
@@ -128,26 +127,28 @@ export const DATA = {
   ],
   projects: [
     {
-      title: "Chat Collect",
-      href: "https://chatcollect.com",
-      dates: "Jan 2024 - Feb 2024",
+      title: "Sorcerer's Script",
+      href: "/",
+      dates: "Sept 2023 - Dec 2023",
       active: true,
       description:
-        "With the release of the [OpenAI GPT Store](https://openai.com/blog/introducing-the-gpt-store), I decided to build a SaaS which allows users to collect email addresses from their GPT users. This is a great way to build an audience and monetize your GPT API usage.",
-      technologies: [
-        "Next.js",
-        "Typescript",
-        "PostgreSQL",
-        "Prisma",
-        "TailwindCSS",
-        "Stripe",
-        "Shadcn UI",
-        "Magic UI",
-      ],
+        "Engineered a Wizarding World-themed knowledge base application with React Redux Toolkit and SCSS",
+        technologies: [
+          "React.js",
+          "React Redux Toolkit (RTK)",
+          "SCSS",
+          "OAuth",
+          "Mongoose",
+          "MongoDB",
+          "Node.js",
+          "Express",
+          "Docker",
+          "Photoshop",
+        ],
       links: [
         {
           type: "Website",
-          href: "https://chatcollect.com",
+          href: "/",
           icon: <Icons.globe className="size-3" />,
         },
       ],
@@ -156,12 +157,12 @@ export const DATA = {
         "https://pub-83c5db439b40468498f97946200806f7.r2.dev/chat-collect.mp4",
     },
     {
-      title: "Magic UI",
-      href: "https://magicui.design",
-      dates: "June 2023 - Present",
+      title: "Being Desi",
+      href: "https://beingdesi.online/show_products",
+      dates: "Dec 2020 - Dec 2022",
       active: true,
       description:
-        "Designed, developed and sold animated UI components for developers.",
+        "Designed and developed an e-commerce website for 'Being Desi,' showcasing and selling panchgavya and organic products, with a focus on promoting healthy living",
       technologies: [
         "Next.js",
         "Typescript",
@@ -175,79 +176,17 @@ export const DATA = {
       links: [
         {
           type: "Website",
-          href: "https://magicui.design",
+          href: "https://beingdesi.online/show_products",
           icon: <Icons.globe className="size-3" />,
         },
-        {
-          type: "Source",
-          href: "https://github.com/magicuidesign/magicui",
-          icon: <Icons.github className="size-3" />,
-        },
+        // {
+        //   type: "Source",
+        //   href: "https://github.com/magicuidesign/magicui",
+        //   icon: <Icons.github className="size-3" />,
+        // },
       ],
       image: "",
       video: "https://cdn.magicui.design/bento-grid.mp4",
-    },
-    {
-      title: "llm.report",
-      href: "https://llm.report",
-      dates: "April 2023 - September 2023",
-      active: true,
-      description:
-        "Developed an open-source logging and analytics platform for OpenAI: Log your ChatGPT API requests, analyze costs, and improve your prompts.",
-      technologies: [
-        "Next.js",
-        "Typescript",
-        "PostgreSQL",
-        "Prisma",
-        "TailwindCSS",
-        "Shadcn UI",
-        "Magic UI",
-        "Stripe",
-        "Cloudflare Workers",
-      ],
-      links: [
-        {
-          type: "Website",
-          href: "https://llm.report",
-          icon: <Icons.globe className="size-3" />,
-        },
-        {
-          type: "Source",
-          href: "https://github.com/dillionverma/llm.report",
-          icon: <Icons.github className="size-3" />,
-        },
-      ],
-      image: "",
-      video: "https://cdn.llm.report/openai-demo.mp4",
-    },
-    {
-      title: "Automatic Chat",
-      href: "https://automatic.chat",
-      dates: "April 2023 - March 2024",
-      active: true,
-      description:
-        "Developed an AI Customer Support Chatbot which automatically responds to customer support tickets using the latest GPT models.",
-      technologies: [
-        "Next.js",
-        "Typescript",
-        "PostgreSQL",
-        "Prisma",
-        "TailwindCSS",
-        "Shadcn UI",
-        "Magic UI",
-        "Stripe",
-        "Cloudflare Workers",
-      ],
-      links: [
-        {
-          type: "Website",
-          href: "https://automatic.chat",
-          icon: <Icons.globe className="size-3" />,
-        },
-      ],
-      image: "",
-      video:
-        "https://pub-83c5db439b40468498f97946200806f7.r2.dev/automatic-chat.mp4",
     },
   ],
   hackathons: [

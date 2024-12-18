@@ -164,12 +164,10 @@ function Page() {
                   My Projects
                 </div>
                 <h2 className="text-3xl font-bold tracking-tighter sm:text-5xl">
-                  Check out my latest work
+                Take a look at what I&apos;ve built
                 </h2>
                 <p className="text-muted-foreground md:text-xl/relaxed lg:text-base/relaxed xl:text-xl/relaxed">
-                  I&apos;ve worked on a variety of projects, from simple
-                  websites to complex web applications. Here are a few of my
-                  favorites.
+                From straightforward websites to intricate web applications, I&apos;ve had the chance to work on a wide range of projects. Here are some of the ones I&apos;m most proud of.
                 </p>
               </div>
             </div>
@@ -205,15 +203,10 @@ function Page() {
                   Hackathons
                 </div>
                 <h2 className="text-3xl font-bold tracking-tighter sm:text-5xl">
-                  I like building things
+                Ctrl + Alt + Create
                 </h2>
                 <p className="text-muted-foreground md:text-xl/relaxed lg:text-base/relaxed xl:text-xl/relaxed">
-                  During my time in university, I attended{" "}
-                  {DATA.hackathons.length}+ hackathons. People from around the
-                  country would come together and build incredible things in 2-3
-                  days. It was eye-opening to see the endless possibilities
-                  brought to life by a group of motivated and passionate
-                  individuals.
+                I&apos;ve actively participated in hackathons, where teams collaborate to create impactful projects in just a few days. These fast-paced, high-energy environments have shown me how passion, creativity, and teamwork can turn ideas into reality.
                 </p>
               </div>
             </div>
@@ -250,15 +243,14 @@ function Page() {
                 Get in Touch
               </h2>
               <p className="mx-auto max-w-[600px] text-muted-foreground md:text-xl/relaxed lg:text-base/relaxed xl:text-xl/relaxed">
-                Want to chat? Just shoot me a dm{" "}
+                Recruiters, to arrange an interview or meeting, please email me or to secure a time on my calendar {" "}
                 <Link
-                  href={DATA.contact.social.X.url}
+                  href="https://calendar.app.google/JCT2AuZqjGNwy9x26"
                   className="text-blue-500 hover:underline"
                 >
-                  with a direct question on twitter
+                  use this Google Calendar link
                 </Link>{" "}
-                and I&apos;ll respond whenever I can. I will ignore all
-                soliciting.
+                Devs, if you&apos;re eager to collaborate or just geek out, send an email; let&apos;s cast some coding spells together!
               </p>
             </div>
           </BlurFade>
