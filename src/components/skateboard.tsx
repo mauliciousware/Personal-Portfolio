@@ -41,7 +41,7 @@ const Skateboard = () => {
           dragRotation.y -= deltaX / 5;
           gsap.to(boardRef.current, {
             rotationY: dragRotation.y,
-            duration: 0.3,
+            duration: 3,
           });
           root.style.setProperty(
             "--x",
@@ -55,7 +55,7 @@ const Skateboard = () => {
           dragRotation.x += deltaY / 5;
           gsap.to(boardRef.current, {
             rotationX: dragRotation.x,
-            duration: 0.3,
+            duration: 3,
           });
           root.style.setProperty(
             "--y",
