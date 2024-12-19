@@ -128,7 +128,7 @@ export const DATA = {
   projects: [
     {
       title: "Sorcerer's Script",
-      href: "/",
+      href: "https://sorcerers-script-git-main-mrmaddy7s-projects.vercel.app/",
       dates: "Sept 2023 - Dec 2023",
       active: true,
       description:
@@ -147,7 +147,7 @@ export const DATA = {
       links: [
         {
           type: "Website",
-          href: "/",
+          href: "https://sorcerers-script-git-main-mrmaddy7s-projects.vercel.app/",
           icon: <Icons.globe className="size-3" />,
         },
       ],
