@@ -13,7 +13,8 @@ import Link from "next/link";
 import Markdown from "react-markdown";
 import gsap from "gsap";
 import { Observer } from "gsap/Observer";
-import styles from "@/app/skate.module.css"; // Adjust path as needed
+import Skateboard from "@/components/skateboard";
+
 
 
 
@@ -68,17 +69,7 @@ function Page() {
               />
             </div>
             <BlurFade delay={BLUR_FADE_MOREDELAY}>
-            <section id="skateboard" className={styles.scene}>
-              <div className={styles.board}>
-                <span className={styles.logo}>CSS<br />is<br />awesome</span>
-                <div className={styles.wheel}></div>
-                <div className={styles.wheel}></div>
-                <div className={styles.wheel}></div>
-                <div className={styles.wheel}></div>
-                <div className={styles.truck}></div>
-                <div className={styles.truck}></div>
-              </div>
-            </section>
+            <Skateboard />
             </BlurFade>
                 </div>
               </div>
