@@ -31,7 +31,7 @@ const Skateboard = () => {
 
       // Dragging observer
       const observer = Observer.create({
-        target: boardRef.current,
+        // Remove the target property to allow dragging from anywhere
         preventDefault: false,
         onDragStart: () => {
           // No need to pause an animation here as there's no ongoing animation after initial one
@@ -40,12 +40,12 @@ const Skateboard = () => {
           // Board remains in last position dragged to; no further action needed
         },
         onChangeX({ deltaX }) {
-          dragRotation.y -= deltaX / 3;
+          dragRotation.y -= deltaX / 2;
           gsap.to(boardRef.current, { rotationY: dragRotation.y, duration: 0.1 });
           root.style.setProperty("--x", (parseInt(root.style.getPropertyValue("--x") || "0", 10) - deltaX).toString());
         },
         onChangeY({ deltaY }) {
-          dragRotation.x += deltaY / 3;
+          dragRotation.x += deltaY / 2;
           gsap.to(boardRef.current, { rotationX: dragRotation.x, duration: 0.1 });
           root.style.setProperty("--y", (parseInt(root.style.getPropertyValue("--y") || "0", 10) + deltaY).toString());
         },
@@ -57,7 +57,7 @@ const Skateboard = () => {
   }, []);
 
   return (
-    <section  id="skateboard" className={styles.scene}>
+    <section id="skateboard" className={styles.scene}>
       <div ref={boardRef} className={styles.board}>
         <span className={styles.logo}>
           CSS
