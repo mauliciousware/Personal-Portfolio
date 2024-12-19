@@ -34,12 +34,12 @@ const Skateboard = () => {
         preventDefault: false,
         onChangeX({ deltaX }) {
           dragRotation.y -= deltaX / 5;
-          gsap.to(boardRef.current, { rotationY: dragRotation.y, duration: -2 });
+          gsap.to(boardRef.current, { rotationY: dragRotation.y, duration: 3 });
           root.style.setProperty("--x", (parseInt(root.style.getPropertyValue("--x") || "0", 10) - deltaX).toString());
         },
         onChangeY({ deltaY }) {
           dragRotation.x += deltaY / 5;
-          gsap.to(boardRef.current, { rotationX: dragRotation.x, duration: 2 });
+          gsap.to(boardRef.current, { rotationX: dragRotation.x, duration: 3 });
           root.style.setProperty("--y", (parseInt(root.style.getPropertyValue("--y") || "0", 10) + deltaY).toString());
         },
       });
