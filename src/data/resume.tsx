@@ -8,7 +8,7 @@ export const DATA = {
   location: "Binghamton, NY",
   locationLink: "https://maps.app.goo.gl/xFh2P25Ww8NRG3fB9",
   description:
-    "Software Development Engineer",
+    "Software Engineer | Athlete",
   summary:
     "I'm an international-level jump rope athlete and a Master's student in Computer Science at SUNY Binghamton, set to yeet my cap in May 2026. I run a [YouTube channel](https://www.youtube.com/@shreemauliraut4524) for coding and gaming, engage in hackathons, and at [Infosys](https://www.infosys.com/), I have solid experience working with a 'big' tech client (let's just say they're fruit-based). At [Wolfx](https://wolfx.io/), a startup where I navigated through chaos like it's just another Tuesday. When I'm not building software or practicing jump rope, you'll find me cruising with the [Bing Skate Club](https://careertools.binghamton.edu/organizations/binghamton-skate-club/).",
   avatarUrl: "/me.jpg",
@@ -143,7 +143,6 @@ export const DATA = {
           "Node.js",
           "Express",
           "Docker",
-          "Photoshop",
         ],
       links: [
         {
