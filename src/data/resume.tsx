@@ -163,14 +163,12 @@ export const DATA = {
       description:
         "Designed and developed an e-commerce website for 'Being Desi,' showcasing and selling panchgavya and organic products, with a focus on promoting healthy living",
       technologies: [
-        "Next.js",
-        "Typescript",
-        "PostgreSQL",
-        "Prisma",
-        "TailwindCSS",
-        "Stripe",
-        "Shadcn UI",
-        "Magic UI",
+        "HTML",
+        "CSS",
+        "NodeJs",
+        "AWS EC2",
+        "S3",
+        "Route53",
       ],
       links: [
         {
