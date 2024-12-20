@@ -153,7 +153,7 @@ export const DATA = {
       ],
       image: "",
       video:
-        "https://pub-83c5db439b40468498f97946200806f7.r2.dev/chat-collect.mp4",
+        "https://potfolio-website.s3.us-west-1.amazonaws.com/vid1.mp4",
     },
     {
       title: "Being Desi",
@@ -185,7 +185,7 @@ export const DATA = {
         // },
       ],
       image: "",
-      video: "https://cdn.magicui.design/bento-grid.mp4",
+      video: "https://potfolio-website.s3.us-west-1.amazonaws.com/vid2.mp4",
     },
   ],
   hackathons: [
