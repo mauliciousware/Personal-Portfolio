@@ -6,17 +6,53 @@ import { Badge } from "@/components/ui/badge";
 import { Card } from "@/components/ui/card";
 import { GitBranch, GitCommit, PlayCircle } from "lucide-react";
 import { useState, useEffect } from "react";
+import styles from './page.module.css';
 
 const BLUR_FADE_DELAY = 0.04;
 
+// Title component with floating animation
+const AnimatedTitle = () => (
+  <div className="text-center">
+    <span className="text-3xl font-bold tracking-tighter sm:text-5xl xl:text-6xl/none">
+      Watch Code in{" "}
+      <span className={styles.motionText}>Motion</span>
+    </span>
+  </div>
+);
+
+// Interactive Counter Component
+const Counter = ({ count, setCount }: { count: number; setCount: React.Dispatch<React.SetStateAction<number>> }) => {
+  return (
+    <div className="relative p-[1px] rounded-xl bg-gradient-to-r from-gray-200 to-gray-300 dark:from-gray-800 dark:to-gray-700">
+      <div className="bg-card rounded-lg p-4">
+        <h3 className="text-lg font-bold mb-4 text-center">Counter Component</h3>
+        <div className="flex items-center justify-center gap-6">
+          <button
+            onClick={() => setCount(count - 1)}
+            className="w-12 h-12 bg-primary/90 text-primary-foreground rounded-lg transition-all hover:bg-primary active:scale-95"
+          >
+            -
+          </button>
+          <span className="text-3xl font-bold min-w-[3ch] text-center">{count}</span>
+          <button
+            onClick={() => setCount(count + 1)} 
+            className="w-12 h-12 bg-primary/90 text-primary-foreground rounded-lg transition-all hover:bg-primary active:scale-95"
+          >
+            +
+          </button>
+        </div>
+      </div>
+    </div>
+  );
+ };
+
 interface Deployment {
-  id: string;
-  timestamp: string;
-  branch: string; 
-  commit: string;
-  message: string;
-  output?: React.ReactNode;
- }
+ id: string;
+ timestamp: string;
+ branch: string;
+ commit: string;
+ message: string;
+}
 
 export default function CICDOutput() {
  const [deployment, setDeployment] = useState<Deployment | null>(null);
@@ -31,10 +67,7 @@ export default function CICDOutput() {
         'Content-Type': 'application/json',
       },
     });
-     
      const data = await response.json();
-     console.log('Raw API Response:', data);
-
      if (data?.deployments?.[0]) {
        const latest = data.deployments[0];
        setDeployment({
@@ -65,13 +98,9 @@ export default function CICDOutput() {
    <main className="flex flex-col min-h-[100dvh] space-y-10 p-8">
      <section>
        <div className="mx-auto w-full max-w-4xl">
+         <AnimatedTitle />
          <BlurFadeText
-           delay={BLUR_FADE_DELAY}
-           className="text-3xl font-bold tracking-tighter sm:text-5xl xl:text-6xl/none"
-           text="Watch Code in Motion"
-         />
-         <BlurFadeText
-           className="text-muted-foreground md:text-xl mt-4"
+           className="text-muted-foreground md:text-xl mt-4 text-center"
            delay={BLUR_FADE_DELAY * 2}
            text="Experience code as it comes to life in real-time—just hit commit, and let the CI/CD pipeline work its magic."
          />
@@ -97,30 +126,13 @@ export default function CICDOutput() {
            </div>
 
            <div className="relative">
-             <div className="absolute -left-4 top-0 bottom-0 w-1 bg-gradient-to-b from-green-500 to-blue-500" />
+             <div className="absolute -left-4 top-0 bottom-0 w-1 bg-gradient-to-r from-green-500 to-blue-500" />
              <div className="pl-4">
                <div className="flex items-center gap-2 mb-2">
                  <PlayCircle className="w-4 h-4 text-green-500" />
                  <span className="text-sm font-medium">Live Output</span>
                </div>
-               <div className="p-4 bg-card rounded-lg">
-                 <h3 className="text-lg font-bold mb-2">Counter Component</h3>
-                 <div className="flex items-center gap-4">
-                   <button 
-                     onClick={() => setCount(c => c - 1)}
-                     className="px-4 py-2 bg-primary text-primary-foreground rounded"
-                   >
-                     -
-                   </button>
-                   <span className="text-2xl">{count}</span>
-                   <button 
-                     onClick={() => setCount(c => c + 1)}
-                     className="px-4 py-2 bg-primary text-primary-foreground rounded"
-                   >
-                     +
-                   </button>
-                 </div>
-               </div>
+               <Counter count={count} setCount={setCount} />
              </div>
            </div>
          </Card>
