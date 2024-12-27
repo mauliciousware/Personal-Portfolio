@@ -49,7 +49,6 @@ export default function Navbar() {
                 <TooltipTrigger asChild>
                   <Link
                     href={social.url}
-                    
                     className={cn(
                       buttonVariants({ variant: "ghost", size: "icon" }),
                       "size-12"
@@ -65,6 +64,26 @@ export default function Navbar() {
             </DockIcon>
           ))}
         <Separator orientation="vertical" className="h-full py-2" />
+        {/* CodeIcon Starts */}
+        <DockIcon>
+          <Tooltip>
+            <TooltipTrigger asChild>
+              <Link
+                href="/cicd" // Redirect to the new page for CI/CD output
+                className={cn(
+                  buttonVariants({ variant: "ghost", size: "icon" }),
+                  "size-12"
+                )}
+              >
+                <Code className="size-4" />
+              </Link>
+            </TooltipTrigger>
+            <TooltipContent>
+              <p>Code</p>
+            </TooltipContent>
+          </Tooltip>
+        </DockIcon>
+        {/* CodeIcon Ends */}
         <DockIcon>
           <Tooltip>
             <TooltipTrigger asChild>
