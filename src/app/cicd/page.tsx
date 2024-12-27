@@ -1,4 +1,3 @@
-// src/app/cicd/page.tsx
 "use client";
 import BlurFade from "@/components/magicui/blur-fade";
 import BlurFadeText from "@/components/magicui/blur-fade-text";
@@ -10,41 +9,79 @@ import styles from './page.module.css';
 
 const BLUR_FADE_DELAY = 0.04;
 
-// Title component with floating animation
 const AnimatedTitle = () => (
-  <div className="text-center">
-    <span className="text-3xl font-bold tracking-tighter sm:text-5xl xl:text-6xl/none">
-      Watch Code in{" "}
-      <span className={styles.motionText}>Motion</span>
-    </span>
-  </div>
+ <div className="text-center">
+   <span className="text-3xl font-bold tracking-tighter sm:text-5xl xl:text-6xl/none">
+     Watch Code in{" "}
+     <span className={styles.motionText}>Motion</span>
+   </span>
+ </div>
 );
 
-// Interactive Counter Component
-const Counter = ({ count, setCount }: { count: number; setCount: React.Dispatch<React.SetStateAction<number>> }) => {
+const AnimatedDropdown = ({ setSelectedValue }: { setSelectedValue: React.Dispatch<React.SetStateAction<string>> }) => {
+  const [selected, setSelected] = useState('');
+  const options = [
+    { value: 'javascript', label: 'JavaScript' },
+    { value: 'typescript', label: 'TypeScript' },
+    { value: 'python', label: 'Python' },
+    { value: 'rust', label: 'Rust' }
+  ];
+
+  const handleChange = (e: React.ChangeEvent<HTMLSelectElement>) => {
+    setSelected(e.target.value);
+    setSelectedValue(e.target.value);
+  };
+
   return (
-    <div className="relative p-[1px] rounded-xl bg-gradient-to-r from-gray-200 to-gray-300 dark:from-gray-800 dark:to-gray-700">
-      <div className="bg-card rounded-lg p-4">
-        <h3 className="text-lg font-bold mb-4 text-center">Counter Component</h3>
-        <div className="flex items-center justify-center gap-6">
-          <button
-            onClick={() => setCount(count - 1)}
-            className="w-12 h-12 bg-primary/90 text-primary-foreground rounded-lg transition-all hover:bg-primary active:scale-95"
-          >
-            -
-          </button>
-          <span className="text-3xl font-bold min-w-[3ch] text-center">{count}</span>
-          <button
-            onClick={() => setCount(count + 1)} 
-            className="w-12 h-12 bg-primary/90 text-primary-foreground rounded-lg transition-all hover:bg-primary active:scale-95"
-          >
-            +
-          </button>
-        </div>
+    <div className={styles.dropdownContainer}>
+      <select 
+        onChange={handleChange}
+        value={selected}
+        className={styles.dropdown}
+      >
+        <option value="">Select a Language</option>
+        {options.map((option) => (
+          <option key={option.value} value={option.value}>
+            {option.label}
+          </option>
+        ))}
+      </select>
+      <div className={styles.selectedDisplay}>
+        Selected: <span className="font-bold">
+          {selected ? options.find(opt => opt.value === selected)?.label : 'None'}
+        </span>
       </div>
     </div>
   );
- };
+};
+
+
+
+const Counter = ({ count, setCount }: { count: number; setCount: React.Dispatch<React.SetStateAction<number>> }) => {
+ return (
+   <div className="relative p-[1px] rounded-xl bg-gradient-to-r from-gray-200 to-gray-300 dark:from-gray-800 dark:to-gray-700">
+     <div className="bg-card rounded-lg p-4">
+       <h3 className="text-lg font-bold mb-4 text-center">Counter Component</h3>
+       <div className="flex items-center justify-center gap-6">
+         <button
+           onClick={() => setCount(count - 1)}
+           className="w-12 h-12 bg-primary/90 text-primary-foreground rounded-lg transition-all hover:bg-primary active:scale-95"
+         >
+           -
+         </button>
+         <span className="text-3xl font-bold min-w-[3ch] text-center">{count}</span>
+         <button
+           onClick={() => setCount(count + 1)} 
+           className="w-12 h-12 bg-primary/90 text-primary-foreground rounded-lg transition-all hover:bg-primary active:scale-95"
+         >
+           +
+         </button>
+       </div>
+     </div>
+   </div>
+ );
+};
+
 
 interface Deployment {
  id: string;
@@ -56,6 +93,7 @@ interface Deployment {
 
 export default function CICDOutput() {
  const [deployment, setDeployment] = useState<Deployment | null>(null);
+ const [selectedValue, setSelectedValue] = useState('');
  const [count, setCount] = useState(0);
  const [isLoading, setIsLoading] = useState(true);
 
@@ -74,8 +112,8 @@ export default function CICDOutput() {
          id: latest.uid,
          timestamp: new Date(latest.created).toLocaleString(),
          branch: latest.meta?.githubCommitRef || 'main',
-         commit: latest.meta?.githubCommitMessage || 'Counter Component',
-         message: latest.meta?.githubCommitMessage || 'Interactive counter demo'
+         commit: latest.meta?.githubCommitMessage || 'Dropdown Component',
+         message: latest.meta?.githubCommitMessage || 'Interactive dropdown demo'
        });
      }
    } catch (error) {
@@ -132,6 +170,7 @@ export default function CICDOutput() {
                  <PlayCircle className="w-4 h-4 text-green-500" />
                  <span className="text-sm font-medium">Live Output</span>
                </div>
+               {/* <AnimatedDropdown setSelectedValue={setSelectedValue} /> */}
                <Counter count={count} setCount={setCount} />
              </div>
            </div>
