@@ -83,6 +83,8 @@ const Counter = ({ count, setCount }: { count: number; setCount: React.Dispatch<
 };
 
 
+
+
 interface Deployment {
  id: string;
  timestamp: string;
@@ -140,7 +142,7 @@ export default function CICDOutput() {
          <BlurFadeText
            className="text-muted-foreground md:text-xl mt-4 text-center"
            delay={BLUR_FADE_DELAY * 2}
-           text="Experience code as it comes to life in real-time—just hit commit, and let the CI/CD pipeline work its magic."
+           text="This page demonstrates real-time CI/CD in action. When code is pushed to the repository, it automatically deploys and updates the live components below. Toggle between different UI components to showcase instant updates without manual deployment steps."
          />
        </div>
      </section>
