@@ -22,6 +22,8 @@ export default function Navbar() {
               <TooltipTrigger asChild>
                 <Link
                   href={item.href}
+                  target={item.label === "Resume" ? "_blank" : undefined} // Conditional target
+                  rel={item.label === "Resume" ? "noopener noreferrer" : undefined} // Conditional rel
                   className={cn(
                     buttonVariants({ variant: "ghost", size: "icon" }),
                     "size-12"
@@ -45,7 +47,7 @@ export default function Navbar() {
                 <TooltipTrigger asChild>
                   <Link
                     href={social.url}
-                    target="_blank"
+                    
                     className={cn(
                       buttonVariants({ variant: "ghost", size: "icon" }),
                       "size-12"
