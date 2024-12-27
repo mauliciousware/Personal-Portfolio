@@ -1,5 +1,5 @@
 "use client";
-
+//src/app/page.tsx
 import { HackathonCard } from "@/components/hackathon-card";
 import { useEffect } from 'react';
 import BlurFade from "@/components/magicui/blur-fade";
