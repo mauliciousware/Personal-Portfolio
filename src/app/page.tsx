@@ -14,9 +14,8 @@ import Markdown from "react-markdown";
 import gsap from "gsap";
 import { Observer } from "gsap/Observer";
 import Skateboard from "@/components/skateboard";
-
-
-
+import { Calendar, Mail } from "lucide-react";
+import { Button } from "@/components/ui/button";
 
 
 
@@ -169,10 +168,10 @@ function Page() {
                   Hackathons
                 </div>
                 <h2 className="text-3xl font-bold tracking-tighter sm:text-5xl">
-                Ctrl + Alt + Create
+                Fast Paced & Creative
                 </h2>
                 <p className="text-muted-foreground md:text-xl/relaxed lg:text-base/relaxed xl:text-xl/relaxed">
-                I&apos;ve actively participated in hackathons, where teams collaborate to create impactful projects in just a few days. These fast-paced, high-energy environments have shown me how passion, creativity, and teamwork can turn ideas into reality.
+                From brainstorming to deployment, I&apos;ve experienced the thrill of bringing ideas to life, proving that even the wildest concepts can become reality with creativity and teamwork.
                 </p>
               </div>
             </div>
@@ -199,29 +198,38 @@ function Page() {
         </div>
       </section>
       <section id="contact">
-        <div className="grid items-center justify-center gap-4 px-4 text-center md:px-6 w-full py-12">
-          <BlurFade delay={BLUR_FADE_DELAY * 16}>
-            <div className="space-y-3">
-              <div className="inline-block rounded-lg bg-foreground text-background px-3 py-1 text-sm">
-                Contact
-              </div>
-              <h2 className="text-3xl font-bold tracking-tighter sm:text-5xl">
-                Get in Touch
-              </h2>
-              <p className="mx-auto max-w-[600px] text-muted-foreground md:text-xl/relaxed lg:text-base/relaxed xl:text-xl/relaxed">
-                Recruiters, to arrange an interview or meeting, please email me or to secure a time on my calendar {" "}
-                <Link
-                  href="https://calendar.app.google/JCT2AuZqjGNwy9x26"
-                  className="text-blue-500 hover:underline"
-                >
-                  use this Google Calendar link
-                </Link>{" "}
-                Devs, if you&apos;re eager to collaborate or just geek out, send an email; let&apos;s cast some coding spells together!
-              </p>
+      <div className="grid items-center justify-center gap-6 px-4 text-center md:px-6 w-full py-12">
+        <BlurFade delay={BLUR_FADE_DELAY * 16}>
+          <div className="space-y-6">
+            <div className="inline-block rounded-lg bg-foreground text-background px-3 py-1 text-sm">
+              Contact
             </div>
-          </BlurFade>
-        </div>
-      </section>
+            <h2 className="text-3xl font-bold tracking-tighter sm:text-5xl">
+              Get in Touch
+            </h2>
+            <p className="mx-auto max-w-[600px] text-muted-foreground md:text-xl/relaxed lg:text-base/relaxed xl:text-xl/relaxed">
+              I'm always open to new opportunities and collaborations. Whether you're a recruiter looking to schedule an interview or a developer interested in working together, I'd love to hear from you!
+            </p>
+            
+            <div className="flex flex-col sm:flex-row gap-4 justify-center items-center mt-8">
+              <Link href="https://calendar.app.google/JCT2AuZqjGNwy9x26" target="_blank">
+                <Button className="w-full sm:w-auto">
+                  <Calendar className="mr-2 h-4 w-4" />
+                  Schedule Meeting
+                </Button>
+              </Link>
+              
+              <Link href="mailto:sraut2@binghamton.edu">
+                <Button variant="outline" className="w-full sm:w-auto">
+                  <Mail className="mr-2 h-4 w-4" />
+                  Send Email
+                </Button>
+              </Link>
+            </div>
+          </div>
+        </BlurFade>
+      </div>
+    </section>
     </main>
   );
 }
