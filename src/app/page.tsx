@@ -208,7 +208,7 @@ function Page() {
               Get in Touch
             </h2>
             <p className="mx-auto max-w-[600px] text-muted-foreground md:text-xl/relaxed lg:text-base/relaxed xl:text-xl/relaxed">
-              I'm always open to new opportunities and collaborations. Whether you're a recruiter looking to schedule an interview or a developer interested in working together, I'd love to hear from you!
+              I&apos;m always open to new opportunities and collaborations. Whether you&apos;re a recruiter looking to schedule an interview or a developer interested in working together, I&apos;d love to hear from you!
             </p>
             
             <div className="flex flex-col sm:flex-row gap-4 justify-center items-center mt-8">
