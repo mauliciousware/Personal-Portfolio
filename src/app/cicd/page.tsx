@@ -3,9 +3,10 @@ import BlurFade from "@/components/magicui/blur-fade";
 import BlurFadeText from "@/components/magicui/blur-fade-text";
 import { Badge } from "@/components/ui/badge";
 import { Card } from "@/components/ui/card";
-import { GitBranch, GitCommit, PlayCircle } from "lucide-react";
-import { useState, useEffect } from "react";
+import { Code ,GitBranch, GitCommit, PlayCircle } from "lucide-react";
+import { useState, useEffect, useRef } from "react";
 import styles from './page.module.css';
+import { AnimatedBeam } from "@/components/magicui/animted-beam";
 
 const BLUR_FADE_DELAY = 0.04;
 
@@ -82,6 +83,47 @@ const Counter = ({ count, setCount }: { count: number; setCount: React.Dispatch<
  );
 };
 
+const CICDWorkflow = () => {
+  const containerRef = useRef<HTMLDivElement>(null);
+  const codeRef = useRef<HTMLDivElement>(null);
+  const githubRef = useRef<HTMLDivElement>(null);
+  const vercelRef = useRef<HTMLDivElement>(null);
+  const prodRef = useRef<HTMLDivElement>(null);
+
+  return (
+    <div className="mt-8">
+      <div className="relative h-[200px] rounded-lg border bg-background p-6" ref={containerRef}>
+        <div className="grid grid-cols-4 gap-8 items-center h-full">
+          <div ref={codeRef} className="flex flex-col items-center">
+            <Code className="w-6 h-6 mb-2" />
+            <span className="text-sm">Local Editor</span>
+          </div>
+          
+          <div ref={githubRef} className="flex flex-col items-center">
+            <GitBranch className="w-6 h-6 mb-2" />
+            <span className="text-sm">GitHub Push</span>
+          </div>
+          
+          <div ref={vercelRef} className="flex flex-col items-center">
+            <svg className="w-6 h-6 mb-2" viewBox="0 0 24 24">
+              <path fill="currentColor" d="M24 22.525H0l12-21.05 12 21.05z" />
+            </svg>
+            <span className="text-sm">Vercel Build</span>
+          </div>
+          
+          <div ref={prodRef} className="flex flex-col items-center">
+            <PlayCircle className="w-6 h-6 mb-2" />
+            <span className="text-sm">Production</span>
+          </div>
+        </div>
+
+        <AnimatedBeam containerRef={containerRef} fromRef={codeRef} toRef={githubRef} />
+        <AnimatedBeam containerRef={containerRef} fromRef={githubRef} toRef={vercelRef} />
+        <AnimatedBeam containerRef={containerRef} fromRef={vercelRef} toRef={prodRef} />
+      </div>
+    </div>
+  );
+};
 
 
 
@@ -152,11 +194,15 @@ export default function CICDOutput() {
 
      <section className="w-full max-w-4xl mx-auto">
        <BlurFade delay={BLUR_FADE_DELAY * 3}>
+       <CICDWorkflow />
          <Card className="p-6">
+          
            <div className="flex items-center justify-between mb-4">
              <div className="flex items-center gap-2">
+              
                <GitCommit className="w-5 h-5" />
                <span className="font-mono text-sm">{deployment.commit}</span>
+               
              </div>
              <Badge variant="outline">{deployment.timestamp}</Badge>
            </div>
@@ -171,12 +217,16 @@ export default function CICDOutput() {
            <div className="relative">
              <div className="absolute -left-4 top-0 bottom-0 w-1 bg-gradient-to-r from-green-500 to-blue-500" />
              <div className="pl-4">
+
                <div className="flex items-center gap-2 mb-2">
+
                  <PlayCircle className="w-4 h-4 text-green-500" />
                  <span className="text-sm font-medium">Live Output</span>
+
                </div>
                {/* <AnimatedDropdown setSelectedValue={setSelectedValue} /> */}
                <Counter count={count} setCount={setCount} />
+
              </div>
            </div>
          </Card>

@@ -61,3 +61,11 @@
       transform: translateY(0);
     }
   }
+
+  .circle {
+    @apply flex flex-col items-center gap-2 rounded-full border-2 bg-card p-4 shadow-lg transition-transform;
+  }
+  
+  .circle:hover {
+    transform: scale(1.1);
+  }
