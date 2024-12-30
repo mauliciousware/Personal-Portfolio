@@ -35,11 +35,11 @@ function Page() {
                 yOffset={8}
                 text={`Hi, I'm ${DATA.name.split(" ")[0]}`}
               />
-              <BlurFadeText
+              {/* <BlurFadeText
                 className="max-w-[600px] md:text-xl"
                 delay={BLUR_FADE_DELAY}
                 text={DATA.description}
-              />
+              /> */}
             </div>
             <BlurFade delay={BLUR_FADE_DELAY}>
             <Skateboard />
