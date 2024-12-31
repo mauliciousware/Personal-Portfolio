@@ -91,8 +91,8 @@ const CICDWorkflow = () => {
   const prodRef = useRef<HTMLDivElement>(null);
 
   return (
-    <div className="mt-8">
-      <div className="relative h-[200px] rounded-lg border bg-background p-6" ref={containerRef}>
+    <div className="mt-0">
+      <div className="relative h-[100px] rounded-lg border bg-background" ref={containerRef}>
         <div className="grid grid-cols-4 gap-8 items-center h-full">
           <div ref={codeRef} className="flex flex-col items-center">
             <Code className="w-6 h-6 mb-2" />
@@ -180,7 +180,7 @@ export default function CICDOutput() {
  if (!deployment) return <div>No deployments found</div>;
 
  return (
-   <main className="flex flex-col min-h-[100dvh] space-y-10 p-8">
+   <main className="flex flex-col min-h-[80dvh] space-y-8 pt-1">
      <section>
        <div className="mx-auto w-full max-w-4xl">
          <AnimatedTitle />
