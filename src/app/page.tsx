@@ -16,6 +16,7 @@ import { Observer } from "gsap/Observer";
 import Skateboard from "@/components/skateboard";
 import { Calendar, Mail } from "lucide-react";
 import { Button } from "@/components/ui/button";
+import { RainbowButton } from "@/components/ui/rainbow-button";
 
 
 
@@ -35,11 +36,16 @@ function Page() {
                 yOffset={8}
                 text={`Hi, I'm ${DATA.name.split(" ")[0]}`}
               />
-              {/* <BlurFadeText
-                className="max-w-[600px] md:text-xl"
-                delay={BLUR_FADE_DELAY}
-                text={DATA.description}
-              /> */}
+            <div className="flex flex-col sm:flex-row gap-4 flex-start items-center mt-8">
+            <BlurFade>
+              <Link href="https://calendar.app.google/JCT2AuZqjGNwy9x26" target="_blank">
+                <RainbowButton className="w-full sm:w-auto">
+                  <Calendar className="mr-2 h-4 w-4" />
+                  Schedule a Call
+                </RainbowButton>
+              </Link>
+            </BlurFade>
+            </div>
             </div>
             <BlurFade delay={BLUR_FADE_DELAY}>
             <Skateboard />
