@@ -44,6 +44,7 @@ export const ResumeCard = ({
       target="_blank"
       className="block cursor-pointer"
       onClick={handleClick}
+      aria-label={`${title} - ${subtitle || ''} ${period}`}
     >
       <Card className="flex">
         <div className="flex-none">

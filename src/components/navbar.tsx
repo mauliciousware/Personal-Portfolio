@@ -22,16 +22,14 @@ export default function Navbar() {
           <DockIcon key={item.href}>
             <Tooltip>
               <TooltipTrigger asChild>
-                <Link
+              <Link
                   href={item.href}
-                  target={item.label === "Home" ? undefined : "_blank"} // Conditional target
-                  rel={item.label === "Home" ? undefined : "noopener noreferrer"} // Conditional rel
-                  className={cn(
-                    buttonVariants({ variant: "ghost", size: "icon" }),
-                    "size-12"
-                  )}
+                  target={item.label === "Resume" ? "_blank" : undefined}
+                  rel={item.label === "Resume" ? "noopener noreferrer" : undefined}
+                  className={cn(buttonVariants({ variant: "ghost", size: "icon" }), "size-12")}
+                  aria-label={item.label}
                 >
-                  <item.icon className="size-4" />
+                  <item.icon className="size-4" aria-hidden="true" />
                 </Link>
               </TooltipTrigger>
               <TooltipContent>
@@ -49,13 +47,9 @@ export default function Navbar() {
                 <TooltipTrigger asChild>
                   <Link
                     href={social.url}
-                  target="_blank"
-                    className={cn(
-                      buttonVariants({ variant: "ghost", size: "icon" }),
-                      "size-12"
-                    )}
-                  >
-                    <social.icon className="size-4" />
+                    className={cn(buttonVariants({ variant: "ghost", size: "icon" }), "size-12")}
+                    aria-label={`Visit ${name} profile`}>
+                    <social.icon className="size-4" aria-hidden="true" />
                   </Link>
                 </TooltipTrigger>
                 <TooltipContent>
@@ -69,15 +63,13 @@ export default function Navbar() {
         <DockIcon>
           <Tooltip>
             <TooltipTrigger asChild>
-              <Link
-                href="/cicd" // Redirect to the new page for CI/CD output
-                className={cn(
-                  buttonVariants({ variant: "ghost", size: "icon" }),
-                  "size-12"
-                )}
+            <Link
+                href="/cicd"
+                className={cn(buttonVariants({ variant: "ghost", size: "icon" }), "size-12")}
+                aria-label="View code examples"
               >
-                <Code className="size-4" />
-              </Link>
+                <Code className="size-4" aria-hidden="true" />
+            </Link>
             </TooltipTrigger>
             <TooltipContent>
               <p>Code</p>
