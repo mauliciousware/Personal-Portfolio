@@ -22,7 +22,20 @@ export function RainbowButton({
 
         // dark mode colors
         "dark:bg-[linear-gradient(#fff,#fff),linear-gradient(#fff_50%,rgba(255,255,255,0.6)_80%,rgba(0,0,0,0)),linear-gradient(90deg,hsl(var(--color-1)),hsl(var(--color-5)),hsl(var(--color-3)),hsl(var(--color-4)),hsl(var(--color-2)))]",
-
+        {
+          variants: {
+            size: {
+              default: "h-9 px-4 py-2",
+              sm: "h-8 rounded-md px-3 text-xs",
+              lg: "h-10 rounded-md px-8",
+              icon: "h-9 w-9 rounded-full",
+            },
+          },
+          defaultVariants: {
+            variant: "default",
+            size: "default",
+          },
+        },
         className,
       )}
       {...props}

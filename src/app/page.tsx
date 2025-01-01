@@ -36,16 +36,16 @@ function Page() {
                 yOffset={8}
                 text={`Hi, I'm ${DATA.name.split(" ")[0]}`}
               />
-            <div className="flex flex-col sm:flex-row gap-4 flex-start items-center mt-8">
-            <BlurFade>
-              <Link href="https://calendar.app.google/JCT2AuZqjGNwy9x26" target="_blank">
-                <RainbowButton className="w-full sm:w-auto">
-                  <Calendar className="mr-2 h-4 w-4" />
-                  Schedule a Call
-                </RainbowButton>
-              </Link>
-            </BlurFade>
-            </div>
+              <div className="mt-2">
+                <BlurFade>
+                  <Link href="https://calendar.app.google/JCT2AuZqjGNwy9x26" target="_blank">
+                    <Button className="h-7 px-3 py-1 text-xs sm:h-10 sm:px-4 sm:py-2 sm:text-base">
+                      <Calendar className="mr-1.5 h-3 w-3 sm:h-4 sm:w-4" />
+                      Schedule Meeting
+                    </Button>
+                  </Link>
+                </BlurFade>
+              </div>
             </div>
             <BlurFade delay={BLUR_FADE_DELAY}>
             <Skateboard />
