@@ -90,6 +90,29 @@ const CICDWorkflow = () => {
   const vercelRef = useRef<HTMLDivElement>(null);
   const prodRef = useRef<HTMLDivElement>(null);
 
+  // Define common beam properties
+  const beamProps = {
+    pathWidth: 2,
+    pathOpacity: 0.15,
+    gradientStartColor: "#4ade80", // Green start
+    gradientStopColor: "#60a5fa", // Blue end
+    duration: 3,
+  };
+
+  // Create multiple beams with different delays
+  const generateBeams = (fromRef: React.RefObject<HTMLDivElement>, toRef: React.RefObject<HTMLDivElement>) => {
+    return [0, 1.5, 3].map((delay, index) => (
+      <AnimatedBeam
+        key={`beam-${index}`}
+        containerRef={containerRef}
+        fromRef={fromRef}
+        toRef={toRef}
+        {...beamProps}
+        delay={delay}
+      />
+    ));
+  };
+
   return (
     <div className="mt-0">
       <div className="relative h-[120px] sm:h-[100px] rounded-lg border bg-background" ref={containerRef}>
@@ -117,9 +140,10 @@ const CICDWorkflow = () => {
           </div>
         </div>
 
-        <AnimatedBeam containerRef={containerRef} fromRef={codeRef} toRef={githubRef} />
-        <AnimatedBeam containerRef={containerRef} fromRef={githubRef} toRef={vercelRef} />
-        <AnimatedBeam containerRef={containerRef} fromRef={vercelRef} toRef={prodRef} />
+        {/* Multiple beams between each stage */}
+        {generateBeams(codeRef, githubRef)}
+        {generateBeams(githubRef, vercelRef)}
+        {generateBeams(vercelRef, prodRef)}
       </div>
     </div>
   );
