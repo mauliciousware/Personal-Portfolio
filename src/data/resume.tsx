@@ -35,7 +35,7 @@ export const DATA = {
     social: {
       GitHub: {
         name: "GitHub",
-        url: "https://github.com/MrMaddy7",
+        url: "https://github.com/mauliciousware",
         icon: Icons.github,
 
         navbar: true,
@@ -129,7 +129,7 @@ export const DATA = {
   projects: [
     {
       title: "Sorcerer's Script",
-      href: "https://sorcerers-script-git-main-mrmaddy7s-projects.vercel.app/",
+      href: "https://sorcerers-script-git-main-mauliciouswares-projects.vercel.app/",
       dates: "Sept 2023 - Dec 2023",
       active: true,
       description:
@@ -148,7 +148,7 @@ export const DATA = {
       links: [
         {
           type: "Website",
-          href: "https://sorcerers-script-git-main-mrmaddy7s-projects.vercel.app/",
+          href: "https://sorcerers-script-git-main-mauliciouswares-projects.vercel.app/",
           icon: <Icons.globe className="size-3" />,
         },
       ],
