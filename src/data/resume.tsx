@@ -129,7 +129,7 @@ export const DATA = {
   projects: [
     {
       title: "Sorcerer's Script",
-      href: "https://sorcerers-script-git-main-mauliciouswares-projects.vercel.app/",
+      href: "https://sorcerers-script.vercel.app/",
       dates: "Sept 2023 - Dec 2023",
       active: true,
       description:
