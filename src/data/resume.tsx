@@ -148,7 +148,7 @@ export const DATA = {
       links: [
         {
           type: "Website",
-          href: "https://sorcerers-script-git-main-mauliciouswares-projects.vercel.app/",
+          href: "https://sorcerers-script.vercel.app/",
           icon: <Icons.globe className="size-3" />,
         },
       ],
