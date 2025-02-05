@@ -32,11 +32,11 @@ function Page() {
             <div className="flex-col flex flex-1 space-y-2.5">
               <BlurFadeText
                 delay={BLUR_FADE_DELAY}
-                className="text-3xl font-bold tracking-tighter sm:text-5xl xl:text-6xl/none"
+                className="select-none text-3xl font-bold tracking-tighter sm:text-5xl xl:text-6xl/none"
                 yOffset={8}
                 text={`Hi, I'm ${DATA.name.split(" ")[0]}`}
               />
-              <div className="mt-2">
+              <div className="select-none mt-2">
                 <BlurFade>
                   <Link href="https://calendar.app.google/JCT2AuZqjGNwy9x26" target="_blank">
                     <Button className="h-7 px-3 py-1 text-xs sm:h-10 sm:px-4 sm:py-2 sm:text-base">
@@ -53,13 +53,13 @@ function Page() {
                 </div>
               </div>
       </section>
-      <section id="about">
+      <section id="about ">
         <BlurFade delay={BLUR_FADE_DELAY * 3}>
-          <h2 className="text-xl font-bold">About</h2>
+          <h2 className="select-none text-xl font-bold">About</h2>
         </BlurFade>
         <BlurFade delay={BLUR_FADE_DELAY * 4}>
             <Markdown 
-              className="prose max-w-full text-pretty font-sans text-sm text-muted-foreground dark:prose-invert"
+              className="select-none prose max-w-full text-pretty font-sans text-sm text-muted-foreground dark:prose-invert"
               components={{
                 a: ({node, ...props}) => (
                   <a {...props} target="_blank" rel="noopener noreferrer" />

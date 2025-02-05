@@ -130,7 +130,7 @@ export const DATA = {
     {
       title: "Sorcerer's Script",
       href: "https://sorcerers-script.vercel.app/",
-      dates: "Sept 2023 - Dec 2023",
+      dates: "Oct 2024 - Jan 2025",
       active: true,
       description:
         "Engineered a Wizarding World-themed knowledge base application with React Redux Toolkit and SCSS",
@@ -159,7 +159,7 @@ export const DATA = {
     {
       title: "Being Desi",
       href: "https://beingdesi.online/show_products",
-      dates: "Dec 2020 - Dec 2022",
+      dates: "Jul 2024 - Aug 2024",
       active: true,
       description:
         "Designed and developed an e-commerce website for 'Being Desi,' showcasing and selling panchgavya and organic products, with a focus on promoting healthy living",
