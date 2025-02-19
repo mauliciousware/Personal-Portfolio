@@ -27,7 +27,7 @@ export const DATA = {
   ],
   navbar: [
     { href: "/", icon: HomeIcon, label: "Home" },
-    { href: "https://drive.google.com/file/d/1dvrqO9_IF3sNj5drcvdPt7frbBr-b80g/view?usp=sharing", icon: NotebookIcon, label: "Resume" },
+    { href: "https://drive.google.com/file/d/149tLkKUGumpnH7zYTuxFCGAkS59Z1nlw/view?usp=sharing", icon: NotebookIcon, label: "Resume" },
   ],
   contact: {
     email: "sraut2@binghamton.edu",
