@@ -27,7 +27,7 @@ export const DATA = {
   ],
   navbar: [
     { href: "/", icon: HomeIcon, label: "Home" },
-    { href: "https://drive.google.com/file/d/1v-vHuSaGu5TVFB29eNn1D-sU3IEYYYMz/view?usp=sharing", icon: NotebookIcon, label: "Resume" },
+    { href: "https://drive.google.com/file/d/1lRKF8sVwG2o7YzdSEAmFA353OhcfQ26c/view?usp=sharing", icon: NotebookIcon, label: "Resume" },
   ],
   contact: {
     email: "sraut2@binghamton.edu",
@@ -72,28 +72,28 @@ export const DATA = {
 
   work: [
     {
-      company: "Infosys",
-      href: "https://infosys.com",
+      company: "Fermi Energy",
+      href: "https://www.fermienergy.com/",
       badges: [],
+      location: "New York, NY",
+      title: "Software Development Engineer",
+      logoUrl: "/FermiLogo.jpeg",
+      start: "May 2024",
+      end: "Present",
+      description:
+        "I developed a real-time analytics dashboard for Fermi Energy’s Battery Intelligence Platform using Next.js and Node.js, enabling stakeholders to monitor production metrics and make data-driven decisions in EV battery manufacturing. I architected a GraphQL API layer to aggregate data from supply chain databases, optimizing query performance through batching and caching strategies and achieving a sustained 30 percent reduction in API response times. In collaboration with cross-functional teams, I transitioned legacy systems into a microservices architecture—maintaining over 30 RESTful APIs—which improved system scalability by 40 percent and reduced deployment time by 30 percent. Finally, I engineered Redis caching mechanisms to store frequently accessed data, reducing database load and improving page load times by 20 percent, ultimately delivering a smoother experience for engineers and analysts.",
+    },
+    {
+      company: "Infosys",
+      badges: [],
+      href: "https://infosys.com",
       location: "Bengaluru, India",
       title: "Software Development Engineer",
       logoUrl: "/infosys_logo.jpeg",
       start: "Oct 2021",
       end: "Jun 2024",
       description:
-        "Expanded system capacity by 73%, supporting 2,300 concurrent users through NGINX load balancing with the Least Connections method. Led a legacy codebase migration, improving performance by 70% with React Redux Toolkit (RTK) and future-proofing with TypeScript.Engineered a Smart Content Navigator for a Big-4 client, achieving 99% SLA compliance with a Node.js/Express.js backend and React.js frontend. Streamlined deployments by leveraging Docker and migrating to AWS ECR, enhancing deployment efficiency by 40% and system reliability by 30%.",
-    },
-    {
-      company: "Wolfx Digital Agency",
-      badges: [],
-      href: "https://wolfx.io",
-      location: "Mumbai, India",
-      title: "Software Engineer",
-      logoUrl: "/wolfx_logo.jpeg",
-      start: "Jul 2021",
-      end: "Sep 2021",
-      description:
-        "Engineered 'Customer360,' a CRM dashboard for a Fortune 500 retail client, using Next.js, Node.js, and GraphQL, achieving a 40% faster data retrieval through API optimization and query caching.Implemented Prisma ORM with PostgreSQL on Supabase, boosting developer productivity by 25%. Optimized frontend performance with TypeScript and custom React Query hooks, improving dashboard load times by 30% and enhancing UI responsiveness.Reduced manual reporting time by 60% by creating an automated Excel and PDF export system in Next.js.",
+        "I developed and maintained the Smart Content Navigator application for a Big-4 client, achieving 99 percent SLA compliance by architecting a Node.js/Express.js backend and a React.js frontend for efficient data rendering. To support over 2,000 concurrent users during load tests, I scaled system capacity by 50 percent through NGINX load balancing using the Least Connections algorithm. I also migrated the legacy codebase to React Redux Toolkit (RTK), which reduced the average page load time from 5.5 seconds to 1.2 seconds and improved UI responsiveness by 25 percent through optimized asynchronous flows and state management. Finally, I containerized the applications with Docker and migrated them to AWS ECR, cutting deployment time by 25 percent and reducing configuration errors by 20 percent.",
     },
     {
       company: "Wolfx Digital Agency",
@@ -103,9 +103,9 @@ export const DATA = {
       title: "DevOps Engineer",
       logoUrl: "/wolfx_logo.jpeg",
       start: "Apr 2021",
-      end: "Jun 2021",
+      end: "Sep 2021",
       description:
-        "Created 10 strategic SEO landing pages for Wolfx.io, driving a 40% increase in organic traffic within 3 months.Improved system architecture with microservices, maintained 30+ REST APIs, and redesigned UI/UX, boosting customer satisfaction by 88%.Secured user authentication with Google OAuth and JSON Web Tokens, reducing unauthorized access attempts by 15%.Enhanced performance using Redis caching and ensured secure handling of sensitive documents with AWS S3 and pre-signed URLs.",
+        "Delivered Customer360, a comprehensive CRM dashboard for a Fortune 500 retail client, which contributed to a 30 percent increase in organic traffic within three months as tracked by AWS Brand Analytics. Leveraged Prisma ORM with PostgreSQL on Supabase to eliminate boilerplate code and streamline database interactions. Optimized API payloads by 35 percent through GraphQL-driven selective fetching and React Query caching, reducing dashboard load time from 2.4 seconds to 1.8 seconds and cutting API response times from 500 ms to 320 ms. Streamlined reporting of web tables by integrating SheetJS and jsPDF to generate Excel and PDF reports dynamically",
     },
   ],
   education: [
