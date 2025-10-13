@@ -161,7 +161,7 @@ export const DATA = {
       dates: "Oct 2024 - Jan 2025",
       active: true,
       description:
-        "Engineered a Wizarding World-themed knowledge base application with React Redux Toolkit and SCSS",
+        "Engineered a Wizarding World-themed knowledge base application with React Redux Toolkit",
         technologies: [
           "React.js",
           "React Redux Toolkit (RTK)",
