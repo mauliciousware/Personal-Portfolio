@@ -78,8 +78,8 @@ export const DATA = {
       location: "New York, NY",
       title: "Software Development Engineer",
       logoUrl: "/FermiLogo.jpeg",
-      start: "May 2024",
-      end: "Present",
+      start: "May 2025",
+      end: "Sep 2025",
       description:
         "I developed a real-time analytics dashboard for Fermi Energy’s Battery Intelligence Platform using Next.js and Node.js, enabling stakeholders to monitor production metrics and make data-driven decisions in EV battery manufacturing. I architected a GraphQL API layer to aggregate data from supply chain databases, optimizing query performance through batching and caching strategies and achieving a sustained 30 percent reduction in API response times. In collaboration with cross-functional teams, I transitioned legacy systems into a microservices architecture—maintaining over 30 RESTful APIs—which improved system scalability by 40 percent and reduced deployment time by 30 percent. Finally, I engineered Redis caching mechanisms to store frequently accessed data, reducing database load and improving page load times by 20 percent, ultimately delivering a smoother experience for engineers and analysts.",
     },
@@ -128,6 +128,34 @@ export const DATA = {
   ],
   projects: [
     {
+      title: "Bot-Bu",
+      href: "https://bot-bu.vercel.app/",
+      dates: "Sept 2025 - Oct 2025",
+      active: true,
+      description:
+        "An AI built for the exclusively university and not for the internet",
+        technologies: [
+          "Next.Js",
+          "Tailwind CSS",
+          "Pinecone",
+          "Express",
+          "Gemini",
+          "Vercel",
+          "Node.js",
+          "Express",
+        ],
+      links: [
+        {
+          type: "Website",
+          href: "https://bot-bu.vercel.app/",
+          icon: <Icons.globe className="size-3" />,
+        },
+      ],
+      image: "",
+      video:
+        "/BotBu.mov",
+    },
+    {
       title: "Sorcerer's Script",
       href: "https://sorcerers-script.vercel.app/",
       dates: "Oct 2024 - Jan 2025",
@@ -155,36 +183,6 @@ export const DATA = {
       image: "",
       video:
         "https://potfolio-website.s3.us-west-1.amazonaws.com/vid1.mp4",
-    },
-    {
-      title: "Being Desi",
-      href: "https://beingdesi.online/show_products",
-      dates: "Jul 2024 - Aug 2024",
-      active: true,
-      description:
-        "Designed and developed an e-commerce website for 'Being Desi,' showcasing and selling panchgavya and organic products, with a focus on promoting healthy living",
-      technologies: [
-        "HTML",
-        "CSS",
-        "NodeJs",
-        "AWS EC2",
-        "S3",
-        "Route53",
-      ],
-      links: [
-        {
-          type: "Website",
-          href: "https://beingdesi.online/show_products",
-          icon: <Icons.globe className="size-3" />,
-        },
-        // {
-        //   type: "Source",
-        //   href: "https://github.com/magicuidesign/magicui",
-        //   icon: <Icons.github className="size-3" />,
-        // },
-      ],
-      image: "",
-      video: "https://potfolio-website.s3.us-west-1.amazonaws.com/vid2.mp4",
     },
   ],
   hackathons: [
