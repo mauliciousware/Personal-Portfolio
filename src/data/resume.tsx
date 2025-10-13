@@ -164,7 +164,7 @@ export const DATA = {
         "Engineered a Wizarding World-themed knowledge base application with React Redux Toolkit",
         technologies: [
           "React.js",
-          "React Redux Toolkit (RTK)",
+          "React Redux Toolkit",
           "SCSS",
           "OAuth",
           "Mongoose",
