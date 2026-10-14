@@ -128,6 +128,30 @@ export const DATA = {
   ],
   projects: [
     {
+      title: "Much Better Comments",
+      href: "https://marketplace.visualstudio.com/items?itemName=ShreemauliRaut.much-better-comments",
+      dates: "",
+      active: true,
+      description:
+        "A VS Code extension that highlights comments with nine customizable colors across dozens of languages. Uses installed syntax grammars to distinguish comments from code and strings, with no network requests or telemetry.",
+      technologies: ["TypeScript", "VS Code API", "TextMate Grammars"],
+      links: [
+        {
+          type: "Marketplace",
+          href: "https://marketplace.visualstudio.com/items?itemName=ShreemauliRaut.much-better-comments",
+          icon: <Icons.globe className="size-3" />,
+        },
+        {
+          type: "Watch Demo",
+          href: "https://potfolio-website.s3.us-west-1.amazonaws.com/My+muchbettercomments.mp4",
+          icon: <Icons.globe className="size-3" />,
+        },
+      ],
+      image: "",
+      video:
+        "https://potfolio-website.s3.us-west-1.amazonaws.com/My+muchbettercomments.mp4",
+    },
+    {
       title: "Bot-Bu",
       href: "https://bot-bu.vercel.app/",
       dates: "Sept 2025 - Oct 2025",
